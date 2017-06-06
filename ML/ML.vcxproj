@@ -148,10 +148,12 @@
   <ItemGroup>
     <ClCompile Include="LR.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="NaiveBayes.cpp" />
     <ClCompile Include="SVM.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="LR.h" />
+    <ClInclude Include="NaiveBayes.h" />
     <ClInclude Include="SVM.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

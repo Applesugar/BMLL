@@ -4,6 +4,7 @@
 #include<vector>
 #include"LR.h"
 #include"SVM.h"
+#include"NaiveBayes.h"
 using namespace std;
 
 int main() {
@@ -12,12 +13,12 @@ int main() {
                                 };
     vector<int> y = { 1,1,1,0,0,0 };*/
     fstream A;
-    A.open("D:\\ML\\BMLL\\1.txt",ios::in);
+    A.open("D:\\ML\\BMLL\\2.txt",ios::in);
     if (!A.is_open()) {
         cout << "No Such Path or Training Text!" << endl;
         return -1;
     }
-    vector<vector<double>> x(100, vector<double>(2, 0));
+    vector<vector<int>> x(15, vector<int>(2, 0));
     vector<int> y(100, 0);
     int i = 0;
     while (!A.eof()) {
@@ -27,30 +28,37 @@ int main() {
         i++;
     }
     A.close();
-    for (int i = 0; i < 100; ++i) {
-        if (y[i] == 0)
-            y[i] = -1;
+    for (int i = 0; i < 15; ++i) {
+        if (y[i] == -1)
+            y[i] = 0;
         cout << x[i][0] << "  " << x[i][1] << "  " << y[i] << endl;
     }
-
+    //testing the NaiveBayes
+    NaiveBayes nb;
+    nb.feature_num = 2;
+    nb.input.assign(x.begin(), x.end());
+    nb.label.assign(y.begin(), y.end());
+    nb.label_num = 2;
+    nb.sample_num = 15;
+    nb.predict(vector<int>(2, 1));
     //testing the SVM
-    SVM svm;
-    svm.KernelType = Linear;
-    svm.Sigma = 2;
-    svm.D = 2;
-    svm.C = 0.1;
-    svm.e = 0.1;
-    svm.it_loops = 10;
-    svm.initial(100, 2);
-    svm.buildSVM(x, y, 70, 2);
-    int cnt_true = 0;
-    for (int i = 71; i < 100; ++i) {
-        int res = svm.predict(x[i], 2);
-        if (res == y[i])
-            cnt_true++;
-    }
-    cout << "准确率为: " << cnt_true / 30.0 * 100 <<"%"<< endl;
-    cout << "w = ( " << svm.res_w[0] << " , " << svm.res_w[1] << " ), b = " << svm.res_b << endl;
+    //SVM svm;
+    //svm.KernelType = Linear;
+    //svm.Sigma = 2;
+    //svm.D = 2;
+    //svm.C = 1;
+    //svm.e = 0.1;
+    //svm.it_loops = 10;
+    //svm.initial(100, 2);
+    //svm.buildSVM(x, y, 70, 2);
+    //int cnt_true = 0;
+    //for (int i = 71; i < 100; ++i) {
+    //    int res = svm.predict(x[i], 2);
+    //    if (res == y[i])
+    //        cnt_true++;
+    //}
+    //cout << "准确率为: " << cnt_true / 30.0 * 100 <<"%"<< endl;
+    //cout << "w = ( " << svm.res_w[0] << " , " << svm.res_w[1] << " ), b = " << svm.res_b << endl;
     //testing the LR 
 //    vector<double> test({ 1.3, 20 });
 //    LR lr;

@@ -24,12 +24,18 @@
     <ClCompile Include="SVM.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="NaiveBayes.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="LR.h">
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="SVM.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="NaiveBayes.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
