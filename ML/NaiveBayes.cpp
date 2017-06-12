@@ -43,6 +43,7 @@ int NaiveBayes::predict(vector<int>& x)
         }
     }
     double max = 0.0;
+
     int label_index = -1;
     for (int j = 0; j < label_num; ++j) {
         cout << "P(label = " << j << ") = " << P[j] << endl;

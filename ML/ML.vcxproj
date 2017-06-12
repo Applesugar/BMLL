@@ -146,12 +146,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="kmeans.cpp" />
     <ClCompile Include="LR.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="NaiveBayes.cpp" />
     <ClCompile Include="SVM.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="kmeans.h" />
     <ClInclude Include="LR.h" />
     <ClInclude Include="NaiveBayes.h" />
     <ClInclude Include="SVM.h" />

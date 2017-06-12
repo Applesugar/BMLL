@@ -27,6 +27,9 @@
     <ClCompile Include="NaiveBayes.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="kmeans.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="LR.h">
@@ -36,6 +39,9 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="NaiveBayes.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="kmeans.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
